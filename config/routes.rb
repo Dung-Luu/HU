@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :answers
+  resources :questions
   # get 'home/index'
   root 'home#index'
 
@@ -6,7 +8,7 @@ Rails.application.routes.draw do
 
   post '/questions' => 'home#temp'
 
-  post '/answers' => 'home#temp'
+  post '/answers' => 'home#answers'
 
   get 'questions/:id' => 'home#question'
 

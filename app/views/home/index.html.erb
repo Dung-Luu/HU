@@ -5,46 +5,21 @@
 
 
 <div class = 'container'>
-  <div class="media">
-    <div class='media-left'>
+  <% @questions.each do |q| %>
+    <div class="media">
+      <div class='media-left'>
         <a href='#'>
-            <img class="media-object" src="https://taoanhonline.com/wp-content/uploads/2019/08/hinh-anh-avatar-0.jpg" style="width:50px" >
-        </a>  
-    </div>   
-    <div class="media-body">
-        <h5 class="mt-0">user@email.com asked:</h5>
-        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+          <img class="media-object" src="<%= q.gravatar %>" style="width:50px" >
+        </a>
+      </div>
+      <div class="media-body">
+        <h5 class="mt-0"><%= q.email %> asked:</h5>
+        <div><%= time_ago_in_words q.created_at %> ago</div>
+        <%= q.body %>
+      </div>
       <div>
-        <a href='/questions/12' class='btn btn-success btn-xs'>View Answer</a>
+        <a href='<%= question_path(q) %>' class='btn btn-success btn-xs'>View Answer</a>
       </div>
     </div>
-  </div>
-  <div class="media">
-    <div class='media-left'>
-        <a href='#'>
-            <img class="media-object" src="https://taoanhonline.com/wp-content/uploads/2019/08/hinh-anh-avatar-0.jpg" style="width:50px" >
-        </a>  
-    </div>   
-    <div class="media-body">
-        <h5 class="mt-0">user@email.com asked:</h5>
-        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-      <div>
-        <a href='/questions/12' class='btn btn-success btn-xs'>View Answer</a>
-      </div>
-    </div>
-  </div>
-  <div class="media">
-    <div class='media-left'>
-        <a href='#'>
-            <img class="media-object" src="https://taoanhonline.com/wp-content/uploads/2019/08/hinh-anh-avatar-0.jpg" style="width:50px" >
-        </a>  
-    </div>   
-    <div class="media-body">
-        <h5 class="mt-0">user@email.com asked:</h5>
-        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-      <div>
-        <a href='/questions/12' class='btn btn-success btn-xs'>View Answer</a>
-      </div>
-    </div>
-  </div>
+  <% end %>
 </div>

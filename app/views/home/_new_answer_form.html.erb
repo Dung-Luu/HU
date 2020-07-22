@@ -10,16 +10,17 @@
       <div class="modal-body">
 
         <%= form_for :answer, url: '/answers', html: { class: 'form-horizontal' } do %>
+          <input type='hidden' name='answer[question_id]' value="<%= @question.id %>"></input>
 
           <div class='modal-body'>
             <div class="form-group">
               <label for="inputEmail1">Email</label>
-              <input type="email" name='email' class="form-control" id="inputEmail1" placeholder="Email" required>
+              <input type="email" name='answer[email]' class="form-control" id="inputEmail1" placeholder="Email" required>
             </div>
             <div class="form-group">
               <label for="inputAnswer">Answer</label>
               <div >
-                <textarea class='form-control' name='answer_body' id='inputAnswer' placeholder='What is your answer' required></textarea>
+                <textarea class='form-control' name='answer[body]' id='inputAnswer' placeholder='What is your answer' required></textarea>
               </div>
             </div>
             <div class="modal-footer">
