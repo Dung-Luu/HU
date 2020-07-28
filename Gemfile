@@ -5,6 +5,9 @@ ruby '2.6.3'
 
 gem 'sucker_punch'
 
+gem "coffee-rails"
+gem "jquery-rails"
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.1'
